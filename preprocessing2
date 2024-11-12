@@ -1,0 +1,34 @@
+# import tensorflow as tf
+import numpy as np
+import cv2
+import os
+# import pandas as pd
+
+# print(tf._version_)
+# print(pd._version_)
+# print(np._version_)
+# print(cv2._version_)
+
+
+set_path=r"C:\Users\ADMIN\Desktop\Data_set\Pediatric Chest X-ray Pneumonia\test"
+DATA=["NORMAL","PNEUMONIA"]
+
+
+for d in DATA:
+    path=os.path.join(set_path,d)       #path 
+    for i in os.listdir(path):
+        img_path=os.path.join(path,i)           #image location excat
+        print("image path=...=",img_path)
+        o=cv2.imread(img_path)          # converting the image to an array form..
+        print("array=\n\n",o)
+        cv2.imshow("Image",o)                   #showing image
+        cv2.waitKey(0)                  # to wait the img until the key is pressed
+        break
+    break
+print("Array\n\n\n")
+print(np.array(o))
+#o=o[::-1]                   # using sclicing methods to image
+im1=cv2.resize(o,(500,500))
+cv2.imshow("Image",im1)
+cv2.waitKey(0)
+#code by sai charan
