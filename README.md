@@ -1,2 +1,2 @@
 # pneumonia-
-nah i am good 
+Pneumonia detection using convolutional nueral networks(CNN)
